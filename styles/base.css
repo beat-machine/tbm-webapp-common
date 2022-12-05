@@ -1,0 +1,220 @@
+/*
+This is a mess. It's going to be replaced entirely. In the meantime, some features from the updated stylesheet have
+been backported here to ease the transition.
+*/
+
+@import "~skeleton-css/css/skeleton.css";
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Source+Sans+Pro&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+
+:root {
+  --background-pattern: linear-gradient(
+      to right,
+      var(--background-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--background-grid) 1px, transparent 1px);
+}
+
+/* Page Structure */
+
+body {
+  background-color: var(--background);
+  background-size: 20px 20px;
+  background-image: var(--background-pattern);
+  color: var(--text);
+  font-size: 1.7rem;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+nav {
+  background: var(--frames);
+  color: var(--background);
+  margin-bottom: 4rem;
+  padding: 5px;
+  user-select: none;
+}
+
+.song-selector {
+  margin-bottom: 1.75rem;
+}
+
+nav a {
+  color: var(--background);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  color: var(--background);
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.app {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+@media (min-width: 550px) {
+  .app {
+    margin-top: 8rem;
+  }
+}
+
+@media (min-width: 550px) {
+  .frame {
+    background-color: var(--background);
+    border: 2px solid var(--frames);
+    padding: 2.5rem;
+    box-shadow: 8px 8px var(--frames);
+  }
+
+  .frame.error {
+    border: 2px solid var(--error);
+    box-shadow: 8px 8px var(--error);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+audio,
+video {
+  display: block;
+  background-color: black;
+}
+
+/* Type */
+
+.one-word-per-line {
+  font-size: 5rem;
+  word-spacing: 100vw;
+  user-select: none;
+  line-height: 92%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 800;
+  color: var(--headings);
+}
+
+.tagline {
+  color: var(--headings);
+  font-weight: 500;
+  user-select: none;
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+label {
+  font-family: "Source Code Pro", monospace;
+  user-select: none;
+  color: var(--headings);
+}
+
+.status {
+  color: var(--headings);
+  text-align: center;
+}
+
+/* Forms */
+
+input[type="url"],
+input[type="number"],
+select {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 800;
+}
+
+a.button,
+button,
+input[type="button"] {
+  background-color: var(--background);
+  border-color: var(--frames);
+  color: var(--text);
+  font-family: "Source Code Pro", monospace;
+  font-weight: 800;
+}
+
+.button-primary {
+  border-color: var(--accent) !important;
+  background-color: var(--accent) !important;
+  color: var(--background) !important;
+}
+
+.button-primary:not([disabled]):hover {
+  border-color: var(--accent-hover) !important;
+  background-color: var(--accent-hover) !important;
+}
+
+button {
+  transition: background-color 0.1s ease-out, border-color 0.1s ease-out,
+    color 0.1s ease-out !important;
+}
+
+input[type="url"],
+input[type="number"] {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+input:focus {
+  border-color: var(
+    --accent
+  ) !important; /* TODO: Copy skeleton.css and make these modifications there to avoid !important */
+}
+
+input,
+button {
+  transition: opacity 0.05s ease-out;
+}
+
+input:disabled,
+button:disabled {
+  opacity: 30%;
+}
+
+.audio-hint {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.render-button-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+video {
+  width: 100%;
+}
+
+@media (min-width: 550px) {
+  video {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* TODO: This is lame but hopefully this entire stylesheet will get replaced. */
+select {
+  color: black;
+}
+
+.label-body {
+  font-family: "Source Sans 3", sans-serif;
+}
